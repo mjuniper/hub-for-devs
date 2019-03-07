@@ -3,7 +3,7 @@ body {
 }
 
 /* index */
-.jumbotron {
+.jumbotron.index {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(./images/hub-banner.jpg) center top/cover no-repeat;
 }
 
@@ -12,7 +12,17 @@ body {
   margin-right: auto;
 }
 
-/* items */
-/* .search-form-inline {
-  margin-top: 5px;
-} */
+.table.table-striped tbody svg {
+  width: 32px;
+  height: 32px;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-column-gap: 20px;
+}
+
+.initiative-banner-img {
+  width: 100%;
+}

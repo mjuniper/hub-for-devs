@@ -1,15 +1,32 @@
 <h1>{{model.item.title}}</h1>
 
+{{#if hasBannerImage}}
+  <img class="initiative-banner-img" src={{bannerImageUrl}}>
+{{/if}}
+
 <p>{{model.item.description}}</p>
+
+<dl>
+  <dt>Owner:</dt>
+  <dd>{{model.item.owner}}</dd>
+  <dt>Access:</dt>
+  <dd>{{model.item.access}}</dd>
+  <dt>License:</dt>
+  <dd>{{model.item.licenseInfo}}</dd>
+</dl>
 
 <h2>Indicators</h2>
 
-<dl class="row">
+<dl>
   {{#each model.data.indicators as |indicator|}}
-    {{!-- {{log indicator}} --}}
-
-    <dt class="col-sm-3">{{indicator.name}}</dt>
-    <dd class="col-sm-9">{{indicator.definition.description}}</dd>
+    <dt>{{indicator.name}}:</dt>
+    <dd>
+      {{#if indicator.source.url}}
+        <a href={{indicator.source.url}}>{{indicator.definition.description}}</a>
+      {{else}}
+        {{indicator.definition.description}}
+      {{/if}}
+    </dd>
   {{/each}}
 </dl>
 

@@ -21,13 +21,14 @@
       </thead>
       <tbody>
         {{#each model.results as |item|}}
-          <tr>
+          {{initiative-row model=item}}
+          {{!-- <tr>
             <td>{{item.title}}</td>
             <td>{{item.owner}}</td>
             <td>{{item.access}}</td>
             <td>{{item.description}}</td>
-            <td>{{#link-to 'initiatives.initiative' item.id}}go{{/link-to}}</td>
-          </tr>
+            <td>{{#link-to 'initiatives.initiative' item.id}}<i class="fas fa-arrow-alt-circle-right"></i>{{/link-to}}</td>
+          </tr> --}}
         {{/each}}
       </tbody>
     </table>
