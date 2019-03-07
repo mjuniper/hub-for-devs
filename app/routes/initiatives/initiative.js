@@ -6,7 +6,7 @@ export default Route.extend({
   hubInitiatives: service(),
 
   model(params) {
-    return this.hubInitiatives.fetchInitiative(params.initiative_id);
+    return this.hubInitiatives.getInitiative(params.initiative_id);
   }
 
 });
