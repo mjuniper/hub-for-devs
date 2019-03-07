@@ -15,7 +15,14 @@ export default Route.extend({
   // the model hook is used to fetch any data based on route parameters
   model (params) {
     const q = params.q || '*';
-    return this.hubInitiatives.searchInitiatives({ searchForm: { q, num: params.num, start: params.start } });
+    const requestOpts = {
+      searchForm: {
+        q,
+        num: params.num,
+        start: params.start
+      }
+    };
+    return this.hubInitiatives.searchInitiatives(requestOpts);
   }
 
 });
