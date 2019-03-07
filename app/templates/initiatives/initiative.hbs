@@ -1,0 +1,16 @@
+<h1>{{model.item.title}}</h1>
+
+<p>{{model.item.description}}</p>
+
+<h2>Indicators</h2>
+
+<dl class="row">
+  {{#each model.data.indicators as |indicator|}}
+    {{!-- {{log indicator}} --}}
+
+    <dt class="col-sm-3">{{indicator.name}}</dt>
+    <dd class="col-sm-9">{{indicator.definition.description}}</dd>
+  {{/each}}
+</dl>
+
+{{outlet}}

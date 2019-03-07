@@ -1,0 +1,41 @@
+<div class="row mb-2">
+  <div class="col-9">
+    <h2>Your search for "{{q}}" yielded {{model.total}} initiatives</h2>
+  </div>
+  <div class="col-3">
+    {{!-- {{ago-search q=q onSearch=(action "doSearch") class="search-form-inline" size="sm"}} --}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <table class="table table-striped table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Title</th>
+          <th>Owner</th>
+          <th>Access</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model.results as |item|}}
+          <tr>
+            <td>{{item.title}}</td>
+            <td>{{item.owner}}</td>
+            <td>{{item.access}}</td>
+            <td>{{item.description}}</td>
+            <td>{{#link-to 'initiatives.initiative' item.id}}go{{/link-to}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    {{item-pager
+      pageSize=num
+      totalCount=model.total
+      pageNumber=pageNumber
+      changePage=(action "changePage")
+    }}
+  </div>
+</div>

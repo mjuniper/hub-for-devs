@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h1 class="display-1 text-center mb-5">Hub For Devs</h1>
+  <form {{action "onSearch" q on="submit"}}>
+    <div class="input-group w-50">
+      {{input class="form-control" placeholder="search for initiatives" value=q}}
+      <div class="input-group-append">
+        <button class="btn btn-secondary" type="submit">Search</button>
+      </div>
+    </div>
+  </form>
+
+</div>
