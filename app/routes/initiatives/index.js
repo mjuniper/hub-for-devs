@@ -1,5 +1,5 @@
-import { inject as service } from "@ember/service";
-import Route from "@ember/routing/route";
+import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
 
 export default Route.extend({
   hubInitiatives: service(),
@@ -14,7 +14,7 @@ export default Route.extend({
   // the model hook is used to fetch any data based on route parameters
   model(params) {
     // setup opts
-    const q = params.q || "*";
+    const q = params.q || '*';
     const searchOpts = {
       searchForm: {
         q,

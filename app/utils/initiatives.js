@@ -1,5 +1,5 @@
 export function getBannerImageUrl(assetsAry) {
-  const matchId = propertyEquals("bannerImage", "id");
+  const matchId = propertyEquals('bannerImage', 'id');
   return assetsAry
     .filter(matchId)
     .map(getUrl)
@@ -7,9 +7,9 @@ export function getBannerImageUrl(assetsAry) {
 }
 
 export function getIconUrl(which, assetsAry) {
-  which = which.toLowerCase() === "light" ? "Light" : "Dark";
+  which = which.toLowerCase() === 'light' ? 'Light' : 'Dark';
   const id = `icon${which}`;
-  const matchId = propertyEquals(id, "id");
+  const matchId = propertyEquals(id, 'id');
   return assetsAry
     .filter(matchId)
     .map(getUrl)
