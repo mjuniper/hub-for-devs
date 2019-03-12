@@ -1,14 +1,12 @@
-import { searchInitiatives, fetchInitiative } from "@esri/hub-initiatives";
-import Service from '@ember/service';
+import { searchInitiatives, getInitiative } from "@esri/hub-initiatives";
+import Service from "@ember/service";
 
 export default Service.extend({
-
-  searchInitiatives (searchForm) {
+  searchInitiatives(searchForm) {
     return searchInitiatives(searchForm);
   },
 
-  fetchInitiative(id) {
-    return fetchInitiative(id);
+  getInitiative(id) {
+    return getInitiative(id);
   }
-
 });

@@ -1,11 +1,22 @@
 export function getBannerImageUrl(assetsAry) {
-  return assetsAry.filter(a => a.id === 'bannerImage')
-    .map(a => a.url)[0];
+  const matchId = propertyEquals("bannerImage", "id");
+  return assetsAry
+    .filter(matchId)
+    .map(getUrl)
+    .pop();
 }
 
 export function getIconUrl(which, assetsAry) {
-  which = (which.toLowerCase() === 'light') ? 'Light': 'Dark';
+  which = which.toLowerCase() === "light" ? "Light" : "Dark";
   const id = `icon${which}`;
-  return assetsAry.filter(a => a.id === id)
-    .map(a => a.url)[0];
+  const matchId = propertyEquals(id, "id");
+  return assetsAry
+    .filter(matchId)
+    .map(getUrl)
+    .pop();
 }
+
+const getUrl = a => a.url;
+const propertyEquals = (match, prop) => {
+  return obj => obj[prop] === match;
+};
